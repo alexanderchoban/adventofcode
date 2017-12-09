@@ -1,0 +1,31 @@
+﻿@model AdventOfCode.Models.PuzzleInputViewModel
+@{
+    ViewData["Title"] = "Solve a Puzzle";
+}
+<div class="row">
+    <h1>Advent of Code 2017 Solver</h1>
+    <form method="post">
+        <div class="form-group">
+            <label for="Day">Day:</label>
+            <input class="form-control" asp-for="Day" />
+            <span asp-validation-for="Day" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Part">Part:</label>
+            <select class="form-control" asp-for="Part" asp-items="Html.GetEnumSelectList<AocPuzzlePart>()">
+            </select>
+            <span asp-validation-for="Part" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Input">Input:</label>
+            <textarea class="form-control" rows="5" asp-for="Input"></textarea>
+            <span asp-validation-for="Input" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Answer">Answer:</label>
+            <textarea class="form-control" rows="5" readonly asp-for="Answer"></textarea>
+            <span asp-validation-for="Answer" class="text-danger"></span>
+        </div>
+        <input type="submit" />
+    </form>
+</div>
